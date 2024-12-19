@@ -1,20 +1,20 @@
 
 # Calcule la racine carrée d'un nombre positif en utilisant la méthode de la dichotomie
 import numpy
+import matplotlib.pyplot as plt
+from Config_file import *
 
 
 def f(x):
     return x**2 - 8 * numpy.log(x) 
-"""
-x = numpy.array([1, 2, 3,])
-y = f(x)
-"""
+
+
 def dichotomie(f, left, right, precision=10**-(3)):
     while right - left >= precision:
         middle = (left + right) / 2
 
         if f(middle) == 0:
-            return middle
+            break
 
         elif f(left) * f(middle) < 0:
             right = middle
@@ -25,8 +25,28 @@ def dichotomie(f, left, right, precision=10**-(3)):
     return middle
 
 result = dichotomie(f, 1, 2, 10**-3)
-print(result)
-print(f(result))
+
+
+def plot_fonction(f, start=0.01, end=2, step=0.01):
+    x = numpy.arange(start, end, step)
+    y = f(x)
+
+    plt.figure(figsize=(LENGTH, WIDTH))
+
+    plt.plot(x, y)
+
+    plt.show()
+
+    
+
+if __name__ == "__main__":
+    plot_fonction(f, 0.01, 2, 0.01)
+"""
+x = numpy.array([1, 2, 3,])
+y = f(x)
+"""
+#print(result)
+#print(f(result))
 
 #left = 1
 #rigth = 3
@@ -40,7 +60,4 @@ print(f(result))
 
 #    elif f(left) * f(middle) < 0:
 #       left = middle
-    
-    
-#print(middle)
-#print(f(middle))
+

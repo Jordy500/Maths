@@ -1,0 +1,3 @@
+
+LENGTH = 15
+WIDTH = 2
