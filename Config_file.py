@@ -1,3 +1,3 @@
 
-LENGTH = 15
-WIDTH = 2
+LENGTH = 10
+WIDTH = 5

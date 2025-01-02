@@ -31,16 +31,22 @@ def plot_fonction(f, start=0.01, end=2, step=0.01):
     x = numpy.arange(start, end, step)
     y = f(x)
 
+
     plt.figure(figsize=(LENGTH, WIDTH))
+    
 
-    plt.plot(x, y)
+    plt.plot(x, y, label="f(x) = x^2 - 8 * log(x)")
+    plt.axhline(0, color="black", lw=1)
 
+    plt.title("Fonction")
+    plt.xlabel("x")
     plt.show()
 
-    
+
 
 if __name__ == "__main__":
     plot_fonction(f, 0.01, 2, 0.01)
+
 """
 x = numpy.array([1, 2, 3,])
 y = f(x)
